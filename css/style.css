@@ -1,0 +1,914 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* start header */
+header{
+    position: relative;
+    max-width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header img{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    pointer-events: none;
+}
+header img#cloud1{
+    z-index: 100;
+    right: 0;
+    opacity: 0.4;
+}
+header img#cloud2{
+    z-index: 100;
+    left: 0;
+    opacity: 0.7;
+}
+
+header .clouds .cloud{
+    position: absolute;
+    width: 100%;
+    height: 300px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    background-size: 1000px 300px;
+}
+header .clouds .cloud#cloudOne{
+    background: url(../images/clouds_2.png);
+    opacity: 0.5;
+    bottom: -20px;
+    animation: animate_01 6s linear infinite;
+}
+header .clouds .cloud#cloudTwo{
+    background: url(../images/cloud4.png);
+    bottom: -50px;
+    opacity: 0.3;
+    animation: animate_01 17s ease-in-out infinite;
+}
+header .clouds .cloud#cloudThree{
+    background: url(../images/clouds_2.png);
+    opacity: 0.4;
+    animation: animate_02 10s linear infinite;
+}
+header .clouds .cloud#cloudFour{
+    background: url(../images/cloud4.png);
+    opacity: 0.3;
+    bottom: -30px;
+    animation: animate_02 15s linear infinite;
+}
+@keyframes animate_01{
+    0%{
+        background-position-x: -500px;
+    }
+    100%{
+        background-position-x: 1500px;
+    }
+}
+@keyframes animate_02{
+    0%{
+        background-position-x: 1500px;
+    }
+    100%{
+        background-position-x: -500px;
+    }
+}
+header .content{
+    position: absolute;
+    z-index: 1000;
+    text-align: center;
+    line-height: 2;
+    color: #fff;
+}
+header .content h1{
+    font-size: 3.5em;
+    text-transform: uppercase;
+    color: rgb(50, 143, 219);
+    letter-spacing: 1.5px;
+}
+header .content p{
+    font-size: 17px;
+    letter-spacing: 1px;
+    flex-wrap: wrap;
+    max-width: 500px;
+}
+header nav {
+    z-index: 1000;
+    position: absolute;
+    top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+header nav ul li{
+    margin: 5px;
+}
+header nav ul li a{
+    margin: 10px 15px;
+    font-size: 22px;
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 250ms;
+}
+header nav ul li a:hover{
+    color:rgb(50, 143, 219);
+}
+header .social-icons{
+    position: absolute;
+    left: 10px;
+    z-index: 1100;
+    display: flex;
+    flex-direction: column;
+}
+header .social-icons .icon{
+    color: rgb(50, 143, 219);
+    margin: 1px 0;
+    font-size: 30px;
+    transition: 0.5s;
+    cursor: pointer;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 10px;
+}
+header .social-icons .icon:hover{
+    transform: translateX(20px);
+}
+header .tel{
+    position: absolute;
+    right: -60px;
+    z-index: 1000;
+    display: flex;
+    transform: rotate(90deg);
+    color: rgb(50, 143, 219);
+    font-size: 20px;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+header .tel .icon{
+    font-weight: bold;
+}
+header::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(to top, #fff , transparent);
+    z-index: 1000;
+}
+/* end header */
+/* start about us */
+section.about{
+    width: 100%;
+    min-height: 65vh;
+    padding: 40px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+section.about h1{
+    font-size: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: rgb(50, 143, 219)
+}
+section.about p{
+    max-width: 800px;
+    text-align: center;
+    margin: 20px 0;
+    color: #666
+}
+section.about .progresses{
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
+    position: relative;
+    flex-wrap: wrap;
+    width: 90%;
+}
+section.about .progresses .progress{
+    width: calc(33.3333% - 30px);
+    margin: 15px;
+}
+section.about .progresses .progress h2{
+    margin-bottom: 10px;
+    color:#555;
+}
+section.about .progresses .progress div{
+    position: relative;
+    background-color: rgb(223, 221, 221);
+    width: 100%;
+    height: 10px;
+    border-radius: 10px;
+}
+section.about .progresses .progress div span{
+    position: absolute;
+    height: 100%;
+    width: 0;
+    background:rgb(50, 143, 219);
+    border-radius: 10px;
+    transition: 3s;
+}
+section.about .progresses .progress:first-child div span.appear{
+    width: 50%;
+}
+section.about .progresses .progress:nth-child(2) div span.appear{
+    width: 80%;
+}
+section.about .progresses .progress:nth-child(3) div span.appear{
+    width: 60%;
+}
+section.about .progresses .progress:nth-child(4) div span.appear{
+    width: 70%;
+}
+section.about .progresses .progress:nth-child(5) div span.appear{
+    width: 60%;
+}
+section.about .progresses .progress:nth-child(6) div span.appear{
+    width: 40%;
+}
+/* end about */
+/* start testim */
+section.testimonial{
+    margin: 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 50px;
+    width: 100%;
+    min-height: 100vh;
+    flex-direction: column;
+    position: relative;
+    background: #333 url(../images/testim.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-blend-mode: multiply;
+}
+section.testimonial h1{
+    margin: 50px 0;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 40px;
+    color: #fff;
+}
+section.testimonial .clients{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 70vh;
+    width: 60%;
+}
+section.testimonial .clients .client{
+    min-width: 100%;
+    min-height: 100%;
+    color: #fff;
+    margin: 20px 0;
+    line-height: 1.5;
+    display: none;
+}
+section.testimonial .clients .client .content{
+    background-color: rgba(17, 96, 161, 0.9);
+    padding: 30px 20px;
+    padding-top: 50px;
+    border-radius: 20px;
+}
+section.testimonial .clients .client h2{
+    margin: 10px 0;
+    text-transform: uppercase;
+}
+section.testimonial .clients .client img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: -60px;
+    display: inline-block;
+}
+section.testimonial .clients .client.active{
+    display: block;
+}
+section.testimonial .icon{
+    position: absolute;
+    top: 50%;
+    font-size: 50px;
+    cursor: pointer;
+    color: #fff;
+    transform: 100ms;
+}
+section.testimonial .icon:hover{
+    color: rgb(50, 143, 219);
+}
+section.testimonial .icon.disable{
+    opacity: 0;
+}
+.right{
+    right: 10px;
+}
+.left{
+    left: 10px;
+}
+section.testimonial .bullets{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin-bottom: 30px;
+}
+section.testimonial .bullets li{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    margin: 5px;
+    transition: 250ms;
+}
+section.testimonial .bullets li.active{
+    border: 1px solid rgb(50, 143, 219);
+    background-color: rgb(50, 143, 219);
+}
+/* end testim */
+/* start portfolio */
+section.portfolio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 50px 0;
+    padding: 20px 50px;
+    min-height: 100vh;
+    max-width: 100%;
+    position: relative;
+}
+section.portfolio h1{
+    text-transform: uppercase;
+    font-size: 45px;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+    color:rgb(50, 143, 219);
+}
+section.portfolio p{
+    margin: 10px 0;
+    color: #444
+}
+section.portfolio .items{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 20px;
+}
+section.portfolio .items .item{
+    width: calc(33.333% - 30px);
+    height: 260px;
+    margin: 10px 15px;
+    position: relative;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+    transform: translateY(50px);
+    opacity: 0;
+}
+section.portfolio .items .item.appear{
+    transform: translateY(0);
+    opacity: 1;
+}
+section.portfolio .items .item:hover .content{
+    display: block;
+    animation: animate_hover 0.5s ease-in-out;
+}
+@keyframes animate_hover{
+    0%{
+        font-size: 0;
+        opacity: 0;
+        width: 0;
+    }
+    100%{
+        font-size: 15px;
+        opacity: 1;
+        width: 90%;
+    }
+}
+section.portfolio .items .item img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+section.portfolio .items .item .content{
+    position: absolute;
+    width: 90%;
+    height: 80%;
+    padding: 20px;
+    background-color: rgb(50, 143, 219);
+    top: 10%;
+    left: -5%;
+    box-shadow: 5px 5px 10px #222;
+    display: none;
+}
+section.portfolio .items .item .content h3{
+    text-transform: uppercase;
+    font-size: 25px;
+    letter-spacing: 2px;
+    color: #fff;
+}
+section.portfolio .items .item .content p{
+    line-height: 2;
+    color: #fff;
+}
+/* end portfolio */
+/* start statistics */
+section.statistics{
+    background: #333 url(../images/testim.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-blend-mode: multiply;
+    min-height: 50vh;
+    width: 100%;
+    position: relative;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 10px;
+}
+section.statistics .container{
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section.statistics article{
+    padding: 20px;
+    min-width: 22%;
+    margin: 0 10px;
+    position: relative;
+    border-radius: 10px;
+    border: 1px solid #fff;
+}
+section.statistics article .icon{
+    font-size: 35px;
+}
+section.statistics article h1{
+    color: rgb(50, 143, 219);
+    font-size: 50px;
+    margin-bottom: 7px;
+    font-weight: lighter;
+}
+section.statistics article p{
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 19px;
+}
+/* end statistics */
+/* start team */
+section.team{
+    padding: 20px;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    margin:  50px 0;
+}
+section.team h1{
+    text-transform: uppercase;
+    font-size: 50px;
+    color: rgb(50, 143, 219);
+    letter-spacing: 1.5px;
+}
+section.team p{
+    margin: 15px 0;
+    font-size: 17.5px;
+    color: #777;
+}
+section.team .engineers{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10px 0;
+    width: 100%;
+    position: relative;
+    padding: 0 40px;
+    overflow: hidden;
+}
+section.team .engineers .eng{
+    width: calc(25% - 10px);
+    margin: 10px 5px;
+    position: relative;
+    border: 1px solid #666;
+    border-radius: 11px;
+    transform: scale(0.8);
+    transition: 0.5s;
+    opacity: 0;
+}
+section.team .engineers .eng.appear{
+    transform: scale(1);
+    transition: 1s;
+    opacity: 1;
+}
+section.team .engineers:hover .eng{
+    filter: blur(3px);
+    transform: scale(0.85);
+}
+section.team .engineers .eng:hover{
+    transform: scale(1);
+    filter: blur(0);
+}
+section.team .engineers .eng img{
+    width: 100%;
+    height: 80%;
+    border-radius: 10px 10px 0 0;
+}
+section.team .engineers .eng figcaption{
+    width: 100%;
+    height: 20%;
+    text-align: center;
+    padding: 10px 0;
+}
+section.team .engineers .eng figcaption h2{
+    color: rgb(50, 143, 219);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+section.team .engineers .eng figcaption h3{
+    margin: 12px 0;
+    text-transform: uppercase;
+    font-size: 18px;
+    color: #666;
+}
+section.team .engineers .eng figcaption .social-icons .icon{
+    margin: 0 1px;
+    color: rgb(50, 143, 219);
+    font-size: 27px;
+    transition: 0.5s;
+}
+section.team .engineers .eng figcaption .social-icons .icon:hover{
+    transform: translateY(10px);
+}
+/* end team*/
+/* start sign-in */
+section.sign-container{
+    position: relative;
+    width: 100%;
+    height: 90vh;
+}
+section.sign-container .sign{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left:0;
+    display: flex;
+    overflow: hidden;
+}
+section.sign-container .sign .imgbox{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    transition: 0.5s;
+}
+section.sign-container .sign .imgbox img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+section.sign-container .sign .formbox{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(50, 143, 219);
+    transition: 0.5s;
+    padding: 50px;
+}
+section.sign-container .sign .formbox form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    line-height: 2;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+section.sign-container .sign .formbox form h2{
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 37px;
+    margin-bottom: 20px;
+}
+section.sign-container .sign .formbox form input{
+    position: relative;
+    padding: 15px 10px;
+    width: 70%;
+    border-radius: 10px;
+    border: none;
+    margin: 10px 0;
+    outline: none;
+}
+section.sign-container .sign .formbox form input[type='submit']{
+    max-width: 110px;
+    text-transform: capitalize;
+    font-weight: bold;
+    color: #fff;
+    background-color: #28e7d5
+}
+section.sign-container .sign .formbox form p{
+    text-transform: uppercase;
+    color: #fff;
+    margin: 20px 0;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+section.sign-container .sign .formbox form p a{
+    text-decoration: none;
+    color: blueviolet;
+    cursor: pointer;
+}
+section.sign-container .sign-up{
+    pointer-events: none;
+}
+section.sign-container.active .sign-up{
+    pointer-events: initial;
+}
+section.sign-container .sign-up .imgbox{
+    top: 100%;
+}
+section.sign-container .sign-up .formbox{
+    top: -100%;
+}
+section.sign-container.active .sign-up .imgbox{
+    top: 0;
+}
+section.sign-container.active .sign-up .formbox{
+    top: 0;
+}
+/* end sign-in */
+/* start footer */
+footer{
+    background-color: rgb(50, 143, 219);
+    min-height: 30vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 150px;
+    padding: 30px 0;
+}
+footer .social-icons .icon{
+    margin: 0 5px;
+    color: #fff;
+    font-size: 35px;
+    transition: 0.5s;
+}
+footer .social-icons .icon:hover{
+    transform: translateY(-10px);
+}
+footer ul{
+    list-style: none;
+    display: flex;
+    margin: 25px 10px;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+footer ul li a{
+    color: #fff;
+    font-size: 22px;
+    text-transform: capitalize;
+    text-decoration: none;
+    margin: 5px;
+    letter-spacing: 1px;
+}
+footer p{
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff
+}
+footer .waves .wave{
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    top: -100px;
+    left: 0;
+    background: url(../images/wave.png);
+    background-size: cover;
+    background-size: 1000px 100px;
+}
+footer .waves .wave1{
+    opacity: 1;
+    bottom: 0;
+    animation: animate_wave 3s linear infinite;
+}
+footer .waves .wave2{
+    opacity: 0.5;
+    bottom: 10px;
+    animation: animate_wave 5s linear infinite;
+}
+footer .waves .wave3{
+    opacity: 0.6;
+    bottom: 5px;
+    animation: animate_wave2 4s linear infinite;
+}
+footer .waves .wave4{
+    opacity: 0.7;
+    bottom: 0;
+    animation: animate_wave2 5s linear infinite;
+}
+@keyframes animate_wave{
+    0%{
+        background-position-x: 0px;
+    }
+    100%{
+        background-position-x: 1000px;
+    }
+}
+@keyframes animate_wave2{
+    0%{
+        background-position-x: 1000px;
+    }
+    100%{
+        background-position-x: 0px;
+    }
+}
+
+/* end footer */
+/* responsive */
+@media screen and (max-width: 1000px){
+    section.about .progresses .progress{
+        width: calc(50% - 30px);
+    }
+    section.testimonial .clients{
+        width: 70%;
+    }
+    section.portfolio{
+        padding: 0;
+    }
+    section.portfolio .items .item{
+        width: calc(50% - 20px);
+        margin: 10px;
+    }
+    section.team .engineers{
+        padding: 0;
+    }
+    section.sign-container .sign .formbox form h2{
+        font-size: 30px;
+    }
+    section.sign-container .sign .formbox form p{
+        font-size: 18px;
+    }
+    section.sign-container .sign .formbox form input{
+        width: 95%;
+    }
+    section.team{
+        padding: 20px 0;
+    }
+    section.team .engineers{
+        padding: 20px 0;
+    }
+}
+@media screen and (max-width : 800px){
+    section.statistics article{
+        min-width: 45%;
+        margin: 10px ;
+    }
+    section.team .engineers .eng{
+        width: calc(50% - 10px);
+        margin: 10px 5px;
+    }
+    section.sign-container .sign .formbox{
+        width: 100%;
+    }
+    section.sign-container .sign .formbox form input{
+        width: 70%;
+    }
+    section.sign-container .sign .imgbox{
+        display: none;
+    }
+}
+@media screen and (max-width : 600px){
+    header .content h1{
+        font-size: 35px;
+    }
+    header .content p{
+        max-width: 200px;
+        flex-wrap: wrap;
+        font-size: 15px;
+    }
+    header .social-icons .icon{
+        font-size: 20px;
+    }
+    header .tel p{
+        font-size: 17px;
+    }
+    section.about h1{
+        font-size: 40px;
+    }
+    section.about .progresses .progress{
+        width: calc(100% - 30px);
+    }
+    section.testimonial .clients{
+        width: 90%;
+    }
+    section.portfolio{
+        padding: 20px 0;
+    }
+    section.portfolio .items .item{
+        width: calc(100% - 30px);
+    }
+    section.statistics article{
+        min-width: 45%;
+    }
+    footer ul li a{
+        font-size: 20px;
+    }
+    footer p{
+        font-size: 19px;
+    }
+}
+@media screen and (max-width: 500px){
+    section.statistics article{
+        min-width: 90%;
+        margin: 10px ;
+    }
+    section.team .engineers .eng{
+        width: calc(100% - 30px);
+    }
+}
+@media screen and (max-width : 400px){
+    section.testimonial h1{
+        font-size: 35px;
+    }
+    section.testimonial .clients{
+        width: 99%;
+    }
+    section.testimonial .clients article .content{
+        padding: 5px;
+        padding-top: 50px;
+    }
+    section.testimonial .left{
+        left:0;
+        font-size: 40px;
+    }
+    section.testimonial .right{
+        right:0;
+        font-size: 40px;
+    }
+    section.portfolio{
+        padding: 20px 0;
+    }
+    section.portfolio .items{
+        padding: 0;
+        margin: 0;
+    }
+    section.team h1{
+        font-size: 30px;
+    }
+    section.team p{
+        font-size: 16px;
+    }
+    section.team .engineers{
+        padding: 0;
+    }
+}
